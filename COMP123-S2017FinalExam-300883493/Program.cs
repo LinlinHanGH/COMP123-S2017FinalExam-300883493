@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*
- * Name:
- * Date:
- * StudentID:
- * Description:
- * Version:
+ * Name: Linlin Han
+ * Date: Aug 17, 2017
+ * StudentID: 300883493
+ * Description: This is the Splash form class
+ * Version: 0.1-Created the Splash form
  */
 
 namespace COMP123_S2017FinalExam_300883493
