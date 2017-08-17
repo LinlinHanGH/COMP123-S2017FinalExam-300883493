@@ -12,8 +12,8 @@ using System.Windows.Forms;
  * Name: Linlin Han
  * Date: Aug 17, 2017
  * StudentID: 300883493
- * Description: This is the Splash form class
- * Version: 0.1-Created the Splash form
+ * Description: This is the SplashForm class
+ * Version: 0.2-Turns the timer off after 3 seconds' show
  */
 
 namespace COMP123_S2017FinalExam_300883493
@@ -32,9 +32,9 @@ namespace COMP123_S2017FinalExam_300883493
         /// <param name="e"></param>
         private void SplashFormTimer_Tick(object sender, EventArgs e)
         {
-            PickHighestCardForm pickHightestCardForm = new PickHighestCardForm();
-            pickHightestCardForm.Show();
+            Program.pickHighestCardForm.Show();
             this.Hide();
+            SplashFormTimer.Enabled = false; // turn timer off
         }
     }
 }
