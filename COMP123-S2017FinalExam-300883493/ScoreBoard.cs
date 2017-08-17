@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace COMP123_S2017FinalExam_300883493
 {
-    class ScoreBoard
+    public class ScoreBoard
     {
         // PRIVATE INSTANCE VARIABLES
         private TextBox _finalScoreTextBox;
@@ -46,6 +46,7 @@ namespace COMP123_S2017FinalExam_300883493
             {
                 ScoreTextBox.Text = this._score.ToString();
                 FinalScoreTextBox.Text = this._score.ToString();
+
             }
         }
 
@@ -88,15 +89,16 @@ namespace COMP123_S2017FinalExam_300883493
         // CONSTRUCTORS
         public ScoreBoard(TextBox scoreTextBox, TextBox timeTextBox, TextBox finalScoreTextBox)
         {
-            this.ScoreTextBox = scoreTextBox;
-            this.TimeTextBox = timeTextBox;
-            this.FinalScoreTextBox = finalScoreTextBox;
+            //this.ScoreTextBox = scoreTextBox;
+            //this.TimeTextBox = timeTextBox;
+            //this.FinalScoreTextBox = finalScoreTextBox;
         }
 
         // PUBLIC METHODS
         public void UpdateTime()
         {
             this.Time = int.Parse(TimeTextBox.Text) - 1;
+            TimeTextBox.Text = this.Time.ToString();
         }
     }
 }

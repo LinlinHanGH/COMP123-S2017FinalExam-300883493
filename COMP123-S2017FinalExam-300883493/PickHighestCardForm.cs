@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*
- * Name:
- * Date:
- * StudentID:
- * Description:
- * Version:
+ * Name: Linlin Han
+ * Date: Aug 17, 2017
+ * StudentID: 300883493
+ * Description: This is the PickHighestCardForm class
+ * Version: 0.2-Revised the class
  */
 
 namespace COMP123_S2017FinalExam_300883493
@@ -29,6 +29,7 @@ namespace COMP123_S2017FinalExam_300883493
         Deck _deck;
         Hand _hand;
         int _maximumPoints;
+        ScoreBoard _scoreboard;
 
         // PUBLIC PROPERTIES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         public List<PictureBox> DealtCardPictureBoxList
@@ -109,6 +110,18 @@ namespace COMP123_S2017FinalExam_300883493
             set
             {
                 this._maximumPoints = value;
+            }
+        }
+
+        public ScoreBoard ScoreBoard
+        {
+            get
+            {
+                return this._scoreboard;
+            }
+            set
+            {
+                this._scoreboard = value;
             }
         }
 
@@ -199,6 +212,9 @@ namespace COMP123_S2017FinalExam_300883493
             this._enableDealtCards();
             this._hideFinalScore();
             UserMessageTextBox.Text = "Click the Deal Button!";
+            ScoreBoard.Score = 0;
+            ScoreBoard.Time = 30;
+
         }
 
         /// <summary>
@@ -222,7 +238,7 @@ namespace COMP123_S2017FinalExam_300883493
         private void PickHighestCardForm_Load(object sender, EventArgs e)
         {
             // Initialize ScoreBoard HERE
-
+            ScoreBoard scoreBoard = new ScoreBoard(TextBox scoreTextBox, TextBox timeTextBox, TextBox finalScoreTextBox);
             // Initialize the App Sounds
             this._buildDealtCardPictureBoxList();
             this._reset();
@@ -272,7 +288,7 @@ namespace COMP123_S2017FinalExam_300883493
                 this.CurrentClickedCard.BackColor = Color.Green;
                 UserMessageTextBox.Text = "You Got It!";
 
-                //Uncomment this --> ScoreBoard.Score += this.MaximumPoints;
+                ScoreBoard.Score += this.MaximumPoints;
 
                 DealButton.Enabled = true;
             }
@@ -358,7 +374,6 @@ namespace COMP123_S2017FinalExam_300883493
         /// <param name="e"></param>
         private void CountDownTimer_Tick(object sender, EventArgs e)
         {
-            /* Uncomment THIS
             ScoreBoard.UpdateTime();
             if (ScoreBoard.Time == 0)
             {
@@ -367,7 +382,7 @@ namespace COMP123_S2017FinalExam_300883493
                 this._disableDealtCards();
                 this._showFinalScore();
             }
-            */
+
         }
 
         /// <summary>
