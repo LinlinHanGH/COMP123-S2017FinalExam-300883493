@@ -89,12 +89,15 @@ namespace COMP123_S2017FinalExam_300883493
         // CONSTRUCTORS
         public ScoreBoard(TextBox scoreTextBox, TextBox timeTextBox, TextBox finalScoreTextBox)
         {
-            //this.ScoreTextBox = scoreTextBox;
-            //this.TimeTextBox = timeTextBox;
-            //this.FinalScoreTextBox = finalScoreTextBox;
+            this.ScoreTextBox = scoreTextBox;
+            this.TimeTextBox = timeTextBox;
+            this.FinalScoreTextBox = finalScoreTextBox;
         }
 
         // PUBLIC METHODS
+        /// <summary>
+        /// this method update the time value
+        /// </summary>
         public void UpdateTime()
         {
             this.Time = int.Parse(TimeTextBox.Text) - 1;
