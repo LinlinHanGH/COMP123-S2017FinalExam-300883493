@@ -70,7 +70,8 @@ namespace COMP123_S2017FinalExam_300883493
             }
             set
             {
-                this._time = int.Parse(TimeTextBox.Text);
+                TimeTextBox.Text = this._time.ToString();
+
             }
         }
 
